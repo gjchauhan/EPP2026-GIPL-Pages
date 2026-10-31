@@ -1,0 +1,171 @@
+# -*- coding: utf-8 -*-
+"""Download missing exhibit images (Sr 87-152) from GIPL server."""
+
+import sys, io, os, re, time, urllib.request as ul
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
+os.makedirs(IMG_DIR, exist_ok=True)
+
+B = "https://rashtriyaektadiwas.com"
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+
+def title_slug(title):
+    return re.sub(r"[^A-Za-z0-9]+", "_", title.title()).strip("_")
+
+# Sr -> (gid, title_en)
+MISSING = [
+    (87,87,"KITE FESTIVAL"),(88,88,"SURFING STATION"),
+    (89,89,"SACRED LOTUS"),(90,90,"BLOSSOM HORSE"),
+    (91,91,"PUNJAB DI SHAAN"),(92,92,"WELL"),
+    (93,93,"NALANDA UNIVERSITY"),(94,94,"CAMELS"),
+    (95,95,"WALL OF KATHPUTLI"),(96,96,"HAWA MAHAL"),
+    (97,97,"KAZIRANGA'S RHINOCEROS"),(98,98,"LIVING ROOT BRIDGE"),
+    (99,99,"BENGALI TOUCH"),(100,100,"RANI KI VAV"),
+    (101,101,"FIRE DANCER"),(102,102,"VIBE OF GOA"),
+    (103,103,"NASHIK DHOL"),(104,104,"MARATHAS"),
+    (105,105,"CAMEL CART"),(106,106,"MARINE DRIVE"),
+    (107,107,"RAM SETU"),(108,108,"ELEPHANT OF SOUTH"),
+    (109,109,"GOLDEN BIRD"),(110,110,"SAMAY KA CHAKRA"),
+    (111,111,"SEVEN HORSES"),(112,114,"ELEPHANT"),
+    (113,115,"DEEP DHARA"),(115,116,"FLICKER AND FLAME"),
+    (116,117,"WAVE OF LIGHT"),(117,118,"TUNNEL OF HOT AIR BALLOON"),
+    (118,119,"TUNNEL OF LAMPS"),(119,120,"TUNNEL OF THREADS"),
+    (120,121,"FIGHTER JET"),(121,122,"INDIA IN SPACE"),
+    (122,123,"SPACE AND TECHNOLOGY"),(123,124,"MAKE IN INDIA"),
+    (124,125,"YOGA AASAN"),(125,126,"SURYA NAMASKAR"),
+    (126,127,"MATSYASANA"),(127,128,"SIRSHASANA"),
+    (128,129,"SARVANGASANA"),(129,130,"PASCHIMOTTANASANA"),
+    (130,131,"HALASANA"),(131,132,"BHUJANGASANA"),
+    (132,133,"ARDHA MATSYENDRASANA"),(133,134,"PADA HASTASANA"),
+    (134,135,"KAKASANA"),(135,136,"DHANURASANA"),
+    (136,137,"SALABHASANA"),(137,138,"TRIKONASANA"),
+    (138,139,"SPIDER WEB"),(139,140,"ENCHANTED FOREST"),
+    (140,141,"TUNNEL OF DEEP WATER"),(141,142,"AQUATIC TUNNEL"),
+    (142,143,"LVM3 ROCKET"),(143,144,"PSLV ROCKET"),
+    (144,145,"GAGANYAAN ASTRONAUT"),(145,146,"MARS ORBITER MISSION"),
+    (146,147,"ADITYA-L1 SOLAR MISSION"),(147,148,"SPACE PORTAL"),
+    (148,149,"VIKRAM LANDER"),(149,150,"PRAGYAN ROVER"),
+    (150,151,"SATELLITE COMMUNICATION DISH"),(151,152,"ARTIFICIAL SATELLITE"),
+    (152,153,"INDIA IN SPACE TITLE PANEL"),
+]
+
+GIPL_IMAGE = {
+    87:  "/assets/img/EktaPrakashParvDetails/17102026/KITE FESTIVAL_d11599fb-2fa8-401c-9d33-7053c4c33c26.png",
+    88:  "/assets/img/EktaPrakashParvDetails/17102026/SURFING STATION_018c626b-21c5-4773-9dc8-00d2a711aa6d.png",
+    89:  "/assets/img/EktaPrakashParvDetails/28102026/SACRED LOTUS_79372139-9c96-4620-8a71-04fa2d6fdf1b.jpg",
+    90:  "/assets/img/EktaPrakashParvDetails/28102026/BLOSSOM HORSE_e1b41ca9-438d-4d1a-8b36-b0f70854b9d9.png",
+    91:  "/assets/img/EktaPrakashParvDetails/28102026/PUNJAB DI SHAAN_6c4e3daf-bc08-4fca-b860-3559fdfa5285.png",
+    92:  "/assets/img/EktaPrakashParvDetails/28102026/WELL_2acde5d1-e775-4a62-8f14-d6cbda2dfe27.jpg",
+    93:  "/assets/img/EktaPrakashParvDetails/28102026/NALANDA UNIVERSITY_9a1f89eb-831b-4590-baf5-43888be93890.png",
+    94:  "/assets/img/EktaPrakashParvDetails/28102026/CAMELS_5b33d4e3-1287-4268-a72c-d3e5c1222ad3.png",
+    95:  "/assets/img/EktaPrakashParvDetails/28102026/WALL OF KATHPUTLI _7de4fb4d-7253-444f-96de-47446705df15.jpg",
+    96:  "/assets/img/EktaPrakashParvDetails/28102026/HAWA MAHAL_0c94a679-f153-4434-987f-c61a9ae2066b.jpg",
+    97:  "/assets/img/EktaPrakashParvDetails/28102026/KAZIRANGA'S RHINOCEROS_65c92954-b6ae-49a6-a686-f1e13f368079.png",
+    98:  "/assets/img/EktaPrakashParvDetails/28102026/LIVING ROOT BRIDGE_12ce350e-ad4b-41ef-90f7-526b838959bc.png",
+    99:  "/assets/img/EktaPrakashParvDetails/28102026/BENGALI TOUCH_66da6c8f-705f-4475-943c-4e4422408fad.jpg",
+    100: "/assets/img/EktaPrakashParvDetails/28102026/RANI KI VAV_a5014d97-63cf-4013-905e-de51755190bd.jpg",
+    101: "/assets/img/EktaPrakashParvDetails/28102026/FIRE DANCER_59240197-bfd6-4546-97d8-cfcb9e75d249.jpg",
+    102: "/assets/img/EktaPrakashParvDetails/28102026/VIBE OF GOA_d077149e-4668-473d-87d7-ef7d780b451b.png",
+    103: "/assets/img/EktaPrakashParvDetails/28102026/NASHIK DHOL_6dc660fd-84fd-447e-9a62-0c17865bee64.jpg",
+    104: "/assets/img/EktaPrakashParvDetails/28102026/MARATHAS_35058057-311f-46be-8fe2-dac098a53b02.png",
+    105: "/assets/img/EktaPrakashParvDetails/28102026/CAMEL CART_c239b90e-2fe8-4550-8c01-050f3e64b778.jpg",
+    106: "/assets/img/EktaPrakashParvDetails/28102026/MARINE DRIVE_423ced6c-6517-485f-8fa5-ad8be7f808c5.png",
+    107: "/assets/img/EktaPrakashParvDetails/28102026/RAM SETU_0e87a4ab-3ee1-47d9-a0fe-319f6b8832aa.jpg",
+    108: "/assets/img/EktaPrakashParvDetails/28102026/ELEPHANT OF SOUTH_780fddb5-da45-4433-ada3-9a1c5242b8c3.png",
+    109: "/assets/img/EktaPrakashParvDetails/28102026/GOLDEN BIRD_b4b80cb9-379a-4009-9a2e-366831fbca6b.jpg",
+    110: "/assets/img/EktaPrakashParvDetails/28102026/SAMAY KA CHAKRA_880bdbde-fd11-4545-b149-518710df030f.jpg",
+    111: "/assets/img/EktaPrakashParvDetails/28102026/SEVEN HORSES_3c19d415-7de8-4ddc-838b-b5979a90fe1d.jpg",
+    114: "/assets/img/EktaPrakashParvDetails/28102026/ELEPHANT_fb6e4e2c-5aad-425e-82bb-2a7565991195.jpg",
+    115: "/assets/img/EktaPrakashParvDetails/28102026/DEEP DHARA_ae0003e7-e56e-4ff9-86de-e02a7e1c7d0d.jpg",
+    116: "/assets/img/EktaPrakashParvDetails/28102026/FLICKER AND FLAME_441df884-ff49-4214-9ca4-fa92e5c556ed.jpg",
+    117: "/assets/img/EktaPrakashParvDetails/28102026/WAVE OF LIGHT_f9b93cf5-52a2-4be5-b689-9ff67080bb22.jpg",
+    118: "/assets/img/EktaPrakashParvDetails/28102026/TUNNEL OF HOT AIR BALLOON_6332b566-3da2-46f6-9c6d-28522180b797.jpg",
+    119: "/assets/img/EktaPrakashParvDetails/28102026/TUNNEL OF LAMPS_a96cddd6-cfda-44fc-87ce-69bd1e8836fd.jpg",
+    120: "/assets/img/EktaPrakashParvDetails/28102026/TUNNEL OF THREADS_23630e1f-a458-4bdb-8d18-ce95017d0858.jpg",
+    121: "/assets/img/EktaPrakashParvDetails/28102026/FIGHTER JET_1367a5ea-3669-44ac-9a19-5064696ee97d.jpg",
+    122: "/assets/img/EktaPrakashParvDetails/28102026/INDIA IN SPACE_6d9953a1-6d5d-41e4-bba3-6c2cc4ab6c99.png",
+    123: "/assets/img/EktaPrakashParvDetails/28102026/SPACE AND TECHNOLOGY_7789de00-8f7c-4c07-a8c3-fd77c231c1a2.jpg",
+    124: "/assets/img/EktaPrakashParvDetails/28102026/MAKE IN INDIA_fa15c21e-a8f1-49d6-a054-a59334246f69.jpg",
+    125: "/assets/img/EktaPrakashParvDetails/28102026/YOGA AASAN_d8724ff8-cc36-44b5-b9bf-812cc45b4e3f.jpg",
+    126: "/assets/img/EktaPrakashParvDetails/28102026/SURYA NAMASKAR_eb90e044-b65a-4e4e-ba40-56e2b19cbe7c.jpg",
+    127: "/assets/img/EktaPrakashParvDetails/28102026/MATSYASANA_593e4a37-cdc8-402b-a8e7-b477fbbd808a.png",
+    128: "/assets/img/EktaPrakashParvDetails/28102026/SIRSHASANA_2ca50cf4-ad2e-41c9-a36f-5f9adc5b0361.png",
+    129: "/assets/img/EktaPrakashParvDetails/28102026/SARVANGASANA_2f154809-0ccb-4e09-842f-20a71d9b75e4.png",
+    130: "/assets/img/EktaPrakashParvDetails/28102026/PASCHIMOTTANASANA_2768f686-fcd5-44b3-909a-c856ac826362.png",
+    131: "/assets/img/EktaPrakashParvDetails/28102026/HALASANA_4afd3dc4-16a8-4369-9eed-02b321433d80.png",
+    132: "/assets/img/EktaPrakashParvDetails/28102026/BHUJANGASANA_8217ec12-b042-4538-9528-a1a71162fc7a.png",
+    133: "/assets/img/EktaPrakashParvDetails/28102026/ARDHA MATSYENDRASANA_b35b227f-ecd7-4e16-a4e0-b5bbef5d300b.png",
+    134: "/assets/img/EktaPrakashParvDetails/28102026/PADA HASTASANA_4d84a4ba-7654-4a76-959c-3b3e3833a197.png",
+    135: "/assets/img/EktaPrakashParvDetails/28102026/KAKASANA_6c86c52b-9e5f-4b0c-a0ec-9ec42af0b99c.png",
+    136: "/assets/img/EktaPrakashParvDetails/28102026/DHANURASANA_db9e1e32-19fc-4384-bab3-1843ff10f70c.png",
+    137: "/assets/img/EktaPrakashParvDetails/28102026/SALABHASANA_73dcf857-6283-4cb2-96fd-ca0ada8599f7.png",
+    138: "/assets/img/EktaPrakashParvDetails/28102026/TRIKONASANA_f90b5893-cfad-45be-9616-30b4c41f1684.png",
+    139: "/assets/img/EktaPrakashParvDetails/28102026/SPIDER WEB_cae71cf7-a069-4e0e-bccc-7b43ecfa222c.jpg",
+    140: "/assets/img/EktaPrakashParvDetails/28102026/ENCHANTED FOREST_626f336b-0dfe-4411-bfa5-01e3253377ef.png",
+    141: "/assets/img/EktaPrakashParvDetails/28102026/TUNNEL OF DEEP WATER_7b2e2483-5bea-491f-bc51-13143f5528c6.jpg",
+    142: "/assets/img/EktaPrakashParvDetails/28102026/AQUATIC TUNNEL_71b1b506-637f-401d-9fa1-b7d810179239.jpg",
+    143: "/assets/img/EktaPrakashParvDetails/28102026/LVM3 ROCKET_f2c228e2-7f35-4452-bc93-60daec5eef11.png",
+    144: "/assets/img/EktaPrakashParvDetails/28102026/PSLV ROCKET_e10ca07d-9726-44d6-a4b3-1ce8cb50cf69.png",
+    145: "/assets/img/EktaPrakashParvDetails/28102026/GAGANYAAN ASTRONAUT_65bdd9bc-fafb-4e11-8cbc-902cfc2a5a86.png",
+    146: "/assets/img/EktaPrakashParvDetails/28102026/MARS ORBITER MISSION_17287563-9c01-438d-804d-035ec74d41e7.png",
+    147: "/assets/img/EktaPrakashParvDetails/28102026/ADITYA-L1 SOLAR MISSION_b3b3a06e-1b82-4b52-8df9-553bf5c7d4c6.png",
+    148: "/assets/img/EktaPrakashParvDetails/28102026/SPACE PORTAL_8ecf3ac3-8759-43a2-885f-00c317b018a5.png",
+    149: "/assets/img/EktaPrakashParvDetails/28102026/VIKRAM LANDER_2e3e7739-5f01-4994-b9ad-191b7c265f3a.png",
+    150: "/assets/img/EktaPrakashParvDetails/28102026/PRAGYAN ROVER_54cc3ccf-d98a-497d-a629-783e1a0bc236.png",
+    151: "/assets/img/EktaPrakashParvDetails/28102026/SATELLITE COMMUNICATION DISH_dffcae78-a147-4624-ad6c-fa9c041f0025.png",
+    152: "/assets/img/EktaPrakashParvDetails/28102026/ARTIFICIAL SATELLITE_a42d1c3c-0ba5-454e-87d8-7a7eebd9af8f.png",
+    153: "/assets/img/EktaPrakashParvDetails/28102026/INDIA IN SPACE TITLE PANEL_6778772e-17a1-453c-9b07-f0e358e64eed.png",
+}
+
+downloaded = skipped = failed = 0
+print(f"Downloading {len(MISSING)} missing images to:\n  {IMG_DIR}\n")
+
+for sr, gid, ten in MISSING:
+    path = GIPL_IMAGE.get(gid)
+    if not path:
+        print(f"  SKIP Sr{sr:03d} gid={gid}: no URL mapped")
+        continue
+
+    ext = path.rsplit(".", 1)[-1].lower()
+    slug = title_slug(ten)
+    fname = f"{sr:03d}_{slug}.{ext}"
+    fpath = os.path.join(IMG_DIR, fname)
+
+    if os.path.exists(fpath):
+        print(f"  SKIP (exists) {fname}")
+        skipped += 1
+        continue
+
+    # URL-encode special chars for the HTTP request
+    encoded_path = path.replace(" ", "%20").replace("'", "%27")
+    url = B + encoded_path
+    try:
+        req = ul.Request(url, headers=HEADERS)
+        with ul.urlopen(req, timeout=20) as resp:
+            data = resp.read()
+        with open(fpath, "wb") as f:
+            f.write(data)
+        kb = len(data) // 1024
+        print(f"  OK  {fname}  ({kb} KB)")
+        downloaded += 1
+        time.sleep(0.15)
+    except Exception as e:
+        print(f"  ERR {fname}: {e}")
+        failed += 1
+
+print(f"\n{'='*60}")
+print(f"Downloaded : {downloaded}")
+print(f"Skipped    : {skipped} (already existed)")
+print(f"Failed     : {failed}")
+
+all_imgs = sorted(f for f in os.listdir(IMG_DIR) if f.lower().endswith((".jpg", ".png")))
+print(f"Total images in folder: {len(all_imgs)}")
+total_mb = sum(os.path.getsize(os.path.join(IMG_DIR, f)) for f in all_imgs) // (1024*1024)
+print(f"Total folder size: ~{total_mb} MB")
+
+# Remove the old MISSING_IMAGES.txt since all images are now present
+missing_txt = os.path.join(IMG_DIR, "MISSING_IMAGES.txt")
+if os.path.exists(missing_txt) and failed == 0:
+    os.remove(missing_txt)
+    print("Removed MISSING_IMAGES.txt (all images downloaded)")

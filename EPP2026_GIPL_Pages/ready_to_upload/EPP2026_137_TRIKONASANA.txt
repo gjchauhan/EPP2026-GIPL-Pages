@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trikonasana · Ekta Prakash Parv 2026</title>
+<meta name="description" content="Trikonasana (त्रिकोणासन) — Ekta Prakash Parv 2026, Rashtriya Ekta Diwas, Ekta Nagar.">
+<meta name="theme-color" content="#1a0f0a">
+<link rel="icon" href="https://rashtriyaektadiwas.com/assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){var r=document.documentElement;try{if(localStorage.getItem('epp-theme')==='night')r.setAttribute('data-theme','night');
+var l=localStorage.getItem('epp-lang');if(!l){l=/^(hi|gu|mr)/.test((navigator.language||'').toLowerCase())?'hi':'en';}
+r.setAttribute('data-lang',l);r.lang=l;}catch(e){}})()</script>
+<style>
+:root{
+  --sf:#ff6a2b; --sf-2:#ffa53b; --gold:#e9b45a; --gold-hi:#ffd98a;
+  --bg:#fff8ee; --bg-2:#fdeedb; --surface:#ffffff; --line:rgba(169,67,22,.16);
+  --ink:#2a1a10; --ink-2:#5a4636; --muted:#8c7462; --title:#6e2a10;
+  --hero-fade:#fff8ee; --shadow:0 18px 50px -20px rgba(110,42,16,.35);
+  --en:"Poppins",system-ui,sans-serif; --display:"Cormorant Garamond",Georgia,serif;
+  --hi:"Noto Sans Devanagari","Poppins",sans-serif; --hi-display:"Noto Sans Devanagari","Poppins",sans-serif;
+}
+[data-theme="night"]{
+  --bg:#08070f; --bg-2:#120b18; --surface:#14101d; --line:rgba(255,190,110,.16);
+  --ink:#f6ecdf; --ink-2:#d6c8b8; --muted:#a8998a; --title:#fff1dc;
+  --hero-fade:#08070f; --shadow:0 18px 60px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--en);overflow-x:hidden;transition:background .4s,color .4s}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit}
+[data-lang="en"] .hi{display:none!important}
+[data-lang="hi"] .en{display:none!important}
+.hi{font-family:var(--hi)}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
+.top{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 14px;padding-top:max(10px,env(safe-area-inset-top));transition:background .3s,box-shadow .3s}
+.top.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.red-logo{background:#fff;border-radius:12px;padding:4px 8px;box-shadow:0 4px 14px rgba(0,0,0,.25);display:block}
+.red-logo img{height:40px;width:auto}
+.tools{display:flex;gap:8px;align-items:center}
+.seg{display:flex;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.6);box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.seg button{border:0;background:none;padding:7px 13px;font-weight:600;font-size:12.5px;color:#5a4636;cursor:pointer}
+.seg button.h{font-family:var(--hi);font-size:13px}
+.seg button[aria-pressed="true"]{background:linear-gradient(135deg,var(--sf),var(--sf-2));color:#fff}
+.round{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.92);color:#6e2a10;
+  display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);padding:0}
+.round svg{width:18px;height:18px}
+.round .moon{display:none}[data-theme="night"] .round .moon{display:block}[data-theme="night"] .round .sun{display:none}
+[data-theme="night"] .seg,[data-theme="night"] .round{background:rgba(20,16,29,.85);border-color:rgba(255,200,130,.25)}
+[data-theme="night"] .seg button{color:#e8d8c4}[data-theme="night"] .round{color:var(--gold-hi)}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;background:#0b0705}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.12);animation:kb 22s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.02) translateY(-2%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(8,5,3,.55) 0%,rgba(8,5,3,.05) 20%,rgba(8,5,3,.18) 40%,rgba(14,7,4,.86) 66%,rgba(14,7,4,.94) 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;z-index:0;background:linear-gradient(180deg,rgba(14,7,4,0),var(--hero-fade))}
+.lights{position:absolute;top:64px;left:-2%;width:104%;height:70px;z-index:1;pointer-events:none}
+.lights path{fill:none;stroke:rgba(255,220,160,.35);stroke-width:1.2}
+.lights circle{animation:bulb 1.8s ease-in-out infinite;filter:drop-shadow(0 0 5px currentColor)}
+@keyframes bulb{0%,100%{opacity:.35}50%{opacity:1}}
+.hero-in{position:relative;z-index:1;padding:0 20px 52px;max-width:760px;width:100%;margin:0 auto}
+.epp-badge{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.epp-badge svg{width:46px;height:46px;flex:none;filter:drop-shadow(0 0 10px rgba(255,150,60,.7))}
+.epp-badge .t{line-height:1.15;color:#ffe9c9}
+.epp-badge b{display:block;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:2.2px}
+.epp-badge span{display:block;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;opacity:.85}
+.epp-badge span.hi{letter-spacing:.3px;text-transform:none;font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{padding:5px 11px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.4px;color:#ffe6c4;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,214,150,.35);backdrop-filter:blur(6px)}
+.chip.n{background:linear-gradient(135deg,var(--sf),var(--sf-2));border-color:transparent;color:#fff}
+h1{margin:0;font-family:var(--display);font-weight:700;color:#fff6e8;line-height:.95;letter-spacing:.5px;
+  font-size:clamp(46px,14vw,92px);text-transform:uppercase;text-shadow:0 2px 30px rgba(0,0,0,.45)}
+h1 .glow{background:linear-gradient(100deg,#fff6e8 0%,#fff6e8 40%,#ffd27a 50%,#fff6e8 60%,#fff6e8 100%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{from{background-position:120% 0}to{background-position:-120% 0}}
+h1.hi{font-family:var(--hi-display);font-weight:700;text-transform:none;line-height:1.3;font-size:clamp(40px,11.5vw,78px)}
+.alt{margin:10px 0 0;font-size:clamp(20px,5.4vw,28px);color:#ffd9a8;font-family:var(--hi-display)}
+.alt.en{font-family:var(--display);font-style:italic;font-weight:600;letter-spacing:.5px}
+.rule{width:56px;height:3px;border-radius:3px;margin:16px 0;background:linear-gradient(90deg,var(--sf),var(--gold-hi));box-shadow:0 0 12px rgba(255,140,50,.8)}
+.place{margin:0;color:#f3dcc0;font-size:15px}
+.cta-row{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.cta{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:999px;border:0;cursor:pointer;
+  text-decoration:none;color:#fff;font-weight:600;font-size:14.5px;letter-spacing:1.4px;text-transform:uppercase;
+  background:linear-gradient(135deg,#ff5a1f,#ff9a3c);position:relative;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,200,140,.4),0 10px 30px -6px rgba(255,100,30,.75);animation:pulse 2.8s ease-in-out infinite}
+.cta.hi{letter-spacing:0;text-transform:none;font-size:15.5px}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.5s ease-in-out infinite}
+@keyframes sweep{60%,100%{transform:translateX(120%)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 1px rgba(255,200,140,.4),0 10px 30px -6px rgba(255,100,30,.75)}50%{box-shadow:0 0 0 1px rgba(255,220,160,.7),0 10px 44px -2px rgba(255,120,40,.95)}}
+.scroll{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:22px;color:#f3dcc0;font-size:12px;letter-spacing:1px;text-decoration:none}
+.scroll svg{width:20px;height:20px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 8px}
+.hl div{text-align:center}
+.hl i{display:grid;place-items:center;width:62px;height:62px;margin:0 auto 8px;border-radius:50%;color:var(--sf);
+  border:1.5px solid color-mix(in srgb,var(--gold) 70%,transparent);background:var(--surface);
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 12%,transparent),0 8px 22px -10px rgba(255,120,40,.6)}
+[data-theme="night"] .hl i{color:var(--gold-hi);box-shadow:0 0 0 4px rgba(255,200,120,.06),0 0 24px -4px rgba(255,140,50,.45)}
+.hl svg{width:30px;height:30px}
+.hl span{display:block;font-size:12.5px;line-height:1.35;color:var(--ink-2);font-weight:500}
+.story{padding:30px 0 10px}
+.kicker{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--sf);font-weight:700;font-size:12px;letter-spacing:2.4px;text-transform:uppercase}
+.kicker.hi{letter-spacing:.4px;font-size:14px;text-transform:none}
+.kicker::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.text p{margin:0;font-size:17px;line-height:1.95;color:var(--ink-2)}
+.text p.en::first-letter{font-family:var(--display);font-weight:700;font-size:4.2em;line-height:.8;float:left;padding:8px 10px 0 0;color:var(--sf)}
+.text p.hi{font-size:18px;line-height:2.05}
+.frame{position:relative;margin:34px auto 10px;border-radius:22px;padding:3px;overflow:hidden;max-width:520px;
+  box-shadow:var(--shadow)}
+.frame::before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent 0 60%,#ffcf7a 72%,#ff6a2b 80%,transparent 90%);animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.frame-in{position:relative;border-radius:19px;overflow:hidden;background:#000}
+.frame button{all:unset;display:block;cursor:zoom-in;width:100%}
+.frame img{width:100%;height:auto}
+.zoom{position:absolute;right:12px;bottom:12px;display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;font-weight:600}
+.zoom svg{width:14px;height:14px}
+.cap{text-align:center;margin:12px 0 0;color:var(--muted);font-size:13px}
+.next{display:flex;align-items:center;gap:14px;margin:34px 0 0;padding:16px 18px;border-radius:20px;text-decoration:none;
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.next .ic{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--sf),var(--sf-2));box-shadow:0 0 18px rgba(255,120,40,.5)}
+.next .ic svg{width:20px;height:20px}
+.next small{display:block;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.next small.hi{letter-spacing:0;text-transform:none;font-size:12.5px}
+.next b{display:block;font-family:var(--display);font-size:22px;color:var(--title);letter-spacing:.5px;line-height:1.2}
+.next b.hi{font-family:var(--hi-display);font-weight:600;font-size:19px}
+.next .grow{flex:1;min-width:0}
+.all{display:block;text-align:center;margin:16px 0 0;color:var(--sf);font-weight:600;font-size:14px;text-decoration:none;padding:8px}
+footer{margin-top:44px;padding:34px 18px calc(30px + env(safe-area-inset-bottom));text-align:center;position:relative;
+  background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--sf) 8%,transparent))}
+footer .mark{width:64px;height:64px;margin:0 auto 10px;filter:drop-shadow(0 0 14px rgba(255,140,50,.6))}
+footer h3{margin:0;font-family:var(--display);font-size:24px;letter-spacing:3px;color:var(--title)}
+footer h3.hi{font-family:var(--hi-display);font-weight:600;letter-spacing:0;font-size:22px}
+footer p{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.7}
+footer .motto{margin-top:12px;color:var(--sf);font-family:var(--hi-display);font-size:17px}
+dialog{border:0;padding:0;background:transparent;width:100vw;height:100vh;max-width:100vw;max-height:100vh}
+dialog::backdrop{background:rgba(5,3,2,.95)}
+dialog .w{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:14px}
+dialog img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+dialog button{all:unset;position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);color:#fff;font-size:26px;cursor:pointer}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
+@media (min-width:900px){.hero-in{padding-bottom:60px}.hl i{width:72px;height:72px}}
+@media (max-width:380px){.red-logo img{height:34px}.seg button{padding:6px 10px}.hl i{width:54px;height:54px}.hl svg{width:26px;height:26px}.hl span{font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}#fx{display:none}}
+</style>
+</head>
+<body data-effect="sparks">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-core" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#fff7d6"/><stop offset=".45" stop-color="#ffc24a"/><stop offset="1" stop-color="#ff5a1f"/></radialGradient>
+    <linearGradient id="g-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd98a"/><stop offset="1" stop-color="#ff6a2b"/></linearGradient>
+    <symbol id="epp-mark" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="url(#g-ring)" stroke-width="2.2"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="url(#g-ring)" stroke-width=".8" stroke-dasharray="1.5 4"/>
+      <g fill="#ffd98a">
+        <circle cx="50" cy="4" r="3"/><circle cx="82.5" cy="17.5" r="3"/><circle cx="96" cy="50" r="3"/><circle cx="82.5" cy="82.5" r="3"/>
+        <circle cx="50" cy="96" r="3"/><circle cx="17.5" cy="82.5" r="3"/><circle cx="4" cy="50" r="3"/><circle cx="17.5" cy="17.5" r="3"/>
+      </g>
+      <path d="M50 18C58 30 64 38 64 48C64 57 57.5 63 50 63C42.5 63 36 57 36 48C36 38 42 30 50 18Z" fill="url(#g-core)"/>
+      <path d="M50 34C54 40 56 44 56 49C56 53.5 53.3 56.5 50 56.5C46.7 56.5 44 53.5 44 49C44 44 46 40 50 34Z" fill="#fff8e0" opacity=".9"/>
+      <path d="M26 66H74C72 77 62 83 50 83C38 83 28 77 26 66Z" fill="url(#g-ring)"/>
+      <path d="M31 71C38 74 62 74 69 71" stroke="#7a2a0e" stroke-width="1.2" fill="none" opacity=".55"/>
+    </symbol>
+  </defs>
+</svg>
+<canvas id="fx" aria-hidden="true"></canvas>
+<header class="top" id="top">
+  <a class="red-logo" href="https://rashtriyaektadiwas.com/" aria-label="Rashtriya Ekta Diwas 2026"><img src="https://rashtriyaektadiwas.com/assets/img/logo.png" alt="Statue of Unity · Rashtriya Ekta Diwas 2026"></a>
+  <div class="tools">
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-l="en" aria-pressed="true">English</button>
+      <button type="button" class="h" data-l="hi" aria-pressed="false">हिंदी</button>
+    </div>
+    <button type="button" class="round" id="themeBtn" aria-label="Day / Night">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-img"><img src="https://rashtriyaektadiwas.com/assets/img/EktaPrakashParvDetails/28102026/TRIKONASANA_f90b5893-cfad-45be-9616-30b4c41f1684.png" alt=""></div>
+  <svg class="lights" id="lights" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <div class="hero-in">
+    <div class="epp-badge rv">
+      <svg><use href="#epp-mark"/></svg>
+      <div class="t"><b>EKTA PRAKASH PARV</b><span class="en">Rashtriya Ekta Diwas 2026</span><span class="hi">राष्ट्रीय एकता दिवस 2026</span></div>
+    </div>
+    <h1 class="en rv"><span class="glow">Trikonasana</span></h1>
+    <h1 class="hi rv" lang="hi"><span class="glow">त्रिकोणासन</span></h1>
+    <p class="alt en rv" lang="hi" style="font-family:var(--hi-display);font-style:normal">त्रिकोणासन</p>
+    <p class="alt hi rv" style="font-family:var(--display);font-style:italic">Trikonasana</p>
+    <div class="rule rv"></div>
+    <p class="place rv"><span class="en">Gujarat, India</span><span class="hi">गुजरात, भारत</span></p>
+    <div class="cta-row rv">
+      <a class="cta" href="#story"><span class="en">Explore the story</span><span class="hi">कहानी पढ़ें</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <a class="scroll" href="#story"><span class="en">Scroll to discover</span><span class="hi">आगे देखें</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+  </div>
+</section>
+<main class="wrap">
+  <div class="hl rv">
+    <div><i><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 24s2-8 8-14c4 3 6 10 6 14"/><path d="M11 20c2-4 4-8 5-10"/><circle cx="22" cy="10" r="2"/></svg></i><span class="en">Light Installation</span><span class="hi">प्रकाश स्थापना</span></div>
+<div><i><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 4l2.5 6 5-3-1.5 6 6 1-5 4 3 5-6-1-1 6-2-5-2 5-1-6-6 1 3-5-5-4 6-1-1.5-6 5 3Z"/></svg></i><span class="en">Cultural Display</span><span class="hi">सांस्कृतिक प्रदर्श</span></div>
+<div><i><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 24s2-8 8-14c4 3 6 10 6 14"/><path d="M11 20c2-4 4-8 5-10"/><circle cx="22" cy="10" r="2"/></svg></i><span class="en">Ekta Nagar Art</span><span class="hi">एकता नगर कला</span></div>
+<div><i><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M16 4l2.5 6 5-3-1.5 6 6 1-5 4 3 5-6-1-1 6-2-5-2 5-1-6-6 1 3-5-5-4 6-1-1.5-6 5 3Z"/></svg></i><span class="en">Unity in Diversity</span><span class="hi">विविधता में एकता</span></div>
+  </div>
+  <article class="story" id="story">
+    <p class="kicker en rv">About the exhibit</p>
+    <p class="kicker hi rv">प्रदर्श के बारे में</p>
+    <div class="text rv" id="desc">
+      <p class="en">Trikonasana, or Triangle Pose, is named after the Sanskrit Trikona, meaning 'triangle.' The pose creates a triangular shape through the arrangement of the legs, arms, and torso. Standing with feet apart, the practitioner turns one foot outward and extends the body sideways, reaching one hand toward the leg or floor and the other upward. Trikonasana stretches the hamstrings, hips, and sides of the torso while strengthening the legs and encouraging spinal mobility. It supports balance, coordination, and awareness of alignment. Common in Hatha Yoga, the posture develops flexibility and muscular control while encouraging steady breathing during movement.</p>
+      <p class="hi" lang="hi">त्रिकोणासन को ट्रायंगल पोज़ कहा जाता है। इसका नाम संस्कृत के 'त्रिकोण' अर्थात तीन कोणों वाली आकृति से लिया गया है। इसमें पैर, भुजाएँ और धड़ मिलकर त्रिकोण जैसा आकार बनाते हैं। पैरों को फैलाकर खड़े होते हैं, एक पैर बाहर की ओर घुमाते हैं और शरीर को बगल में झुकाकर एक हाथ पैर या जमीन की ओर तथा दूसरा हाथ ऊपर उठाते हैं। इससे जाँघों के पिछले हिस्से, कूल्हों और धड़ के दोनों ओर खिंचाव आता है, जबकि पैरों की मांसपेशियाँ मजबूत होती हैं। यह संतुलन, समन्वय और सही शारीरिक स्थिति के प्रति जागरूकता बढ़ाता है। हठयोग में यह लचीलापन और नियंत्रित श्वास विकसित करने के लिए किया जाता है।</p>
+    </div>
+    <figure class="frame rv" style="margin-left:auto;margin-right:auto">
+      <div class="frame-in">
+        <button type="button" id="zoomBtn" aria-label="Enlarge image / चित्र बड़ा करें">
+          <img src="https://rashtriyaektadiwas.com/assets/img/EktaPrakashParvDetails/28102026/TRIKONASANA_f90b5893-cfad-45be-9616-30b4c41f1684.png" loading="lazy" alt="Trikonasana — त्रिकोणासन">
+          <span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg><span class="en">Tap to zoom</span><span class="hi">बड़ा देखें</span></span>
+        </button>
+      </div>
+    </figure>
+    <p class="cap"><span class="en">The installation at Ekta Prakash Parv 2026</span><span class="hi">एकता प्रकाश पर्व 2026 में प्रदर्शित स्थापना</span></p>
+  </article>
+  <a class="next rv" href="https://rashtriyaektadiwas.com/EktaPrakashParv/EktaPrakashParvDetails?Id=139&qid=0">
+    <div class="grow"><small class="en">Next exhibit · № 138</small><small class="hi">अगला प्रदर्श · № 138</small>
+      <b class="en">Spider Web</b><b class="hi">मकड़ी का जाला</b></div>
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+  <a class="all" href="https://rashtriyaektadiwas.com/Home/EktaPrakashParv2026"><span class="en">View all exhibits</span><span class="hi">सभी प्रदर्श देखें</span></a>
+</main>
+<footer>
+  <svg class="mark"><use href="#epp-mark"/></svg>
+  <h3 class="en">EKTA PRAKASH PARV 2026</h3><h3 class="hi">एकता प्रकाश पर्व 2026</h3>
+  <p class="en">Rashtriya Ekta Diwas · Statue of Unity, Ekta Nagar, Gujarat<br>17 Oct 2026 – 15 Jan 2027 · 6:00 PM – 10:30 PM · Near Valley of Flowers</p>
+  <p class="hi">राष्ट्रीय एकता दिवस · स्टैच्यू ऑफ यूनिटी, एकता नगर, गुजरात<br>17 अक्टूबर 2026 – 15 जनवरी 2027 · शाम 6:00 – रात 10:30 · वैली ऑफ फ्लावर्स के पास</p>
+  <p class="motto">एक भारत, श्रेष्ठ भारत</p>
+</footer>
+<dialog id="lb"><div class="w"><img alt=""></div><button type="button" aria-label="Close">×</button></dialog>
+<script>
+(function(){
+  var R=document.documentElement, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function put(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  var lb=document.querySelectorAll('[data-l]');
+  function setLang(l){R.setAttribute('data-lang',l);R.lang=l;lb.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l);});put('epp-lang',l);}
+  lb.forEach(function(b){b.onclick=function(){setLang(b.dataset.l);};}); setLang(R.getAttribute('data-lang')||'en');
+  document.getElementById('themeBtn').onclick=function(){var t=R.getAttribute('data-theme')==='night'?'day':'night';R.setAttribute('data-theme',t);put('epp-theme',t);};
+  var top=document.getElementById('top');
+  addEventListener('scroll',function(){top.classList.toggle('solid',scrollY>innerHeight*.7);},{passive:true});
+  var L=document.getElementById('lights'),cols=['#ffd98a','#ff6a2b','#fff3d0','#ffb347','#ff8a3c'],h='<path d="M0 10 Q100 60 200 18 T400 12"/>';
+  for(var i=0;i<24;i++){var t=i/23,x=t*400,y=t<.5?10+(1-Math.pow((t-.25)/.25,2))*30+t*16:18+(1-Math.pow((t-.75)/.25,2))*22-(t-.5)*12;
+    h+='<circle cx="'+x.toFixed(1)+'" cy="'+(y+4).toFixed(1)+'" r="3.2" fill="'+cols[i%5]+'" color="'+cols[i%5]+'" style="animation-delay:'+(i%6*.3).toFixed(1)+'s"/>';}
+  L.innerHTML=h;
+  var c=document.getElementById('fx'),x=c.getContext('2d'),W,H,P=[],eff=document.body.dataset.effect||'sparks';
+  function size(){var d=Math.min(devicePixelRatio||1,2);W=c.width=innerWidth*d;H=c.height=innerHeight*d;x.setTransform(1,0,0,1,0,0);}
+  function make(){var n=eff==='snow'?(innerWidth<600?70:120):(eff==='petals'?50:40);P=[];for(var i=0;i<n;i++)P.push(spawn(true));}
+  function spawn(any){var d=Math.min(devicePixelRatio||1,2);return{x:Math.random()*W,y:any?Math.random()*H:-10*d,r:(Math.random()*2.4+0.8)*d,vy:(Math.random()*.6+.35)*d,vx:(Math.random()-.5)*.3*d,ph:Math.random()*6.28,a:Math.random()*.5+.45};}
+  function frame(){x.clearRect(0,0,W,H);var night=R.getAttribute('data-theme')==='night';x.globalAlpha=scrollY>innerHeight*.6?.3:1;
+    for(var i=0;i<P.length;i++){var p=P[i];p.ph+=.012;p.y+=p.vy;p.x+=p.vx+Math.sin(p.ph)*.35;
+      if(p.y>H+10||p.x<-20||p.x>W+20){P[i]=spawn(false);continue;}
+      x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);
+      if(eff==='snow'){x.fillStyle=night?'rgba(255,255,255,'+p.a+')':'rgba(255,255,255,'+(p.a*.95)+')';x.shadowColor=night?'rgba(200,225,255,.9)':'rgba(120,90,60,.35)';x.shadowBlur=night?8:3;}
+      else if(eff==='petals'){x.fillStyle='rgba(255,'+(180+Math.random()*60|0)+','+(100+Math.random()*80|0)+','+p.a+')';x.shadowColor='rgba(255,100,180,.7)';x.shadowBlur=8;}
+      else{x.fillStyle='rgba(255,'+(170+Math.random()*60|0)+',90,'+p.a+')';x.shadowColor='rgba(255,140,50,.9)';x.shadowBlur=10;}
+      x.fill();}
+    requestAnimationFrame(frame);}
+  if(!reduce){size();make();frame();addEventListener('resize',function(){size();make();});}
+  var d=document.getElementById('lb'),di=d.querySelector('img'),zb=document.getElementById('zoomBtn');
+  zb.onclick=function(){di.src=zb.querySelector('img').src;if(d.showModal)d.showModal();};
+  d.onclick=function(e){if(e.target!==di)d.close();};
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});els.forEach(function(e){io.observe(e);});}
+  else els.forEach(function(e){e.classList.add('in');});
+})();
+</script>
+</body>
+</html>
